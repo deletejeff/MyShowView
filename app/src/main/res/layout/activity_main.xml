@@ -1,0 +1,612 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!--界面3 banner界面-->
+    <LinearLayout
+        android:id="@+id/ll_banner"
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+        <com.youth.banner.Banner
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/banner"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+
+
+    <!--界面2 发票界面-->
+    <LinearLayout
+        android:id="@+id/ll_2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@mipmap/bg_2"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:paddingLeft="130px"
+        android:paddingRight="130px">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="122px"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="靖边天然气有限公司"
+                android:textColor="@color/txt_bg_black"
+                android:textSize="46px"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20px"
+                android:text="销售凭证"
+                android:textColor="#ff3030"
+                android:textSize="32px" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layerType="software"
+            android:background="@drawable/line_stroke" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18px"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="交易时间："
+                    android:textColor="@color/txt_bg_black"
+                    android:textSize="32px"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/tv_payTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2019年12月1日 12:00:00"
+                    android:textColor="@color/txt_bg_black"
+                    android:textSize="32px" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="用户姓名："
+                    android:textColor="@color/txt_bg_black"
+                    android:textSize="32px"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/tv_username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="大哪吒"
+                    android:textColor="@color/txt_bg_black"
+                    android:textSize="32px" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="用户卡号："
+                    android:textColor="@color/txt_bg_black"
+                    android:textSize="32px"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/tv_counterNum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="001"
+                    android:textColor="@color/txt_bg_black"
+                    android:textSize="32px" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100px"
+            android:layout_marginTop="54px"
+            android:orientation="horizontal"
+            android:background="#2ec2f1">
+            <TextView
+                android:text="商品名称"
+                android:gravity="center"
+                android:textSize="36px"
+                android:textColor="#fff"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent" />
+            <TextView
+                android:text="数量"
+                android:gravity="center"
+                android:textSize="36px"
+                android:textColor="#fff"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent" />
+            <TextView
+                android:text="单价"
+                android:gravity="center"
+                android:textSize="36px"
+                android:textColor="#fff"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent" />
+            <TextView
+                android:text="金额"
+                android:gravity="center"
+                android:textSize="36px"
+                android:textColor="#fff"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_invoice"
+            android:layout_width="match_parent"
+            android:layout_height="320px">
+
+        </android.support.v7.widget.RecyclerView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="right"
+            android:layout_marginTop="20px">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="应收金额："
+                android:textColor="#ff3030"
+                android:textSize="36px" />
+            <TextView
+                android:id="@+id/tv_4_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10.00元"
+                android:textColor="@color/txt_bg_black"
+                android:textSize="36px" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="106px"
+                android:text="实收金额："
+                android:textColor="#ff3030"
+                android:textSize="36px" />
+            <TextView
+                android:id="@+id/tv_4_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10.00元"
+                android:textColor="@color/txt_bg_black"
+                android:textSize="36px" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="98px"
+                android:text="操作员："
+                android:textColor="#ff3030"
+                android:textSize="36px" />
+            <TextView
+                android:id="@+id/tv_4_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="敖丙"
+                android:textColor="@color/txt_bg_black"
+                android:textSize="36px" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:layout_marginTop="18px"
+            android:layout_marginBottom="88px">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:gravity="bottom"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="发票提取码："
+                        android:textColor="#ff3030"
+                        android:textSize="30px" />
+                    <TextView
+                        android:id="@+id/tv_4_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="123456789"
+                        android:textColor="@color/txt_bg_black"
+                        android:textSize="30px" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="30px">
+                    <TextView
+                        android:text="您也可以访问以下网址，申请电子发票："
+                        android:gravity="center"
+                        android:textSize="30px"
+                        android:textColor="@color/txt_bg_black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/tv_5_1"
+                        android:text="www.123321@.com"
+                        android:gravity="center"
+                        android:textSize="30px"
+                        android:textColor="@color/txt_bg_black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30px"
+                    android:layout_marginBottom="12px"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:text="温馨提示：开票日期以开具当天为准，请凭此小票在"
+                        android:gravity="center"
+                        android:textSize="30px"
+                        android:textColor="@color/txt_bg_black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/tv_5_2"
+                        android:text="XX"
+                        android:gravity="center"
+                        android:textSize="30px"
+                        android:textColor="@color/txt_bg_black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:text="天内开具发票。"
+                        android:gravity="center"
+                        android:textSize="30px"
+                        android:textColor="@color/txt_bg_black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:gravity="center_horizontal|bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <ImageView
+                    android:id="@+id/iv_code"
+                    android:layout_width="190px"
+                    android:layout_height="190px"
+
+                    android:layout_marginBottom="16px"
+                    android:background="@color/txt_bg" />
+                <TextView
+                    android:text="请扫描二维码进入电子发票申请页面"
+                    android:gravity="center"
+                    android:textSize="30px"
+                    android:layout_marginBottom="12px"
+                    android:textColor="@color/txt_bg_black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--界面1 详情界面-->
+
+
+    <LinearLayout
+        android:id="@+id/ll_content"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@mipmap/bg_main"
+        android:paddingLeft="44px"
+        android:paddingRight="44px"
+        android:paddingBottom="50px"
+        android:gravity="center">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="106px">
+            <ImageView
+                android:src="@mipmap/logo_main"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:text="用户名：张三"
+                    android:layout_marginLeft="34px"
+                    android:gravity="center"
+                    android:textColor="#ffffff"
+                    android:textSize="30px"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:id="@+id/tv_meterCode"
+                    android:text="用户表号：123456"
+                    android:layout_marginLeft="34px"
+                    android:gravity="center"
+                    android:textColor="#ffffff"
+                    android:textSize="30px"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:id="@+id/tv_time"
+                    android:text="时间段：123456"
+                    android:layout_marginLeft="34px"
+                    android:gravity="center"
+                    android:textColor="#ffffff"
+                    android:textSize="30px"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_shape"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="566px"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:paddingRight="25px">
+                    <ImageView
+                        android:src="@mipmap/bg_main_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="328px"
+                        android:layout_marginTop="84px"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingLeft="25px">
+                    <ImageView
+                        android:src="@mipmap/bg_main_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="106px"/>
+                    <TextView
+                        android:textSize="30px"
+                        android:text="燃气进万家 安全靠大家"
+                        android:layout_marginTop="26px"
+                        android:textStyle="bold"
+                        android:textColor="#333333"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:textSize="22px"
+                        android:text="天然气安装业务咨询电话：0912-4618503"
+                        android:layout_marginTop="20px"
+                        android:textColor="#333333"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:textSize="22px"
+                        android:text="天然气缴费业务咨询电话：0912-4618031"
+                        android:layout_marginTop="16px"
+                        android:textColor="#333333"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:textSize="22px"
+                        android:text="天然气使用业务咨询电话：0912-4611389"
+                        android:layout_marginTop="16px"
+                        android:textColor="#333333"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginBottom="30px"
+                android:gravity="center">
+                <LinearLayout
+                    android:layout_width="1506px"
+                    android:layout_height="70px"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="2dp">
+                    <TextView
+                        android:id="@+id/t_1"
+                        android:text="名称"
+                        android:gravity="center"
+                        android:textSize="@dimen/txt"
+                        android:textColor="@color/txt"
+                        android:background="@color/txt_bg"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"/>
+                    <TextView
+                        android:id="@+id/t_2"
+                        android:text="数量"
+                        android:gravity="center"
+                        android:textSize="@dimen/txt"
+                        android:textColor="@color/txt"
+                        android:background="@color/txt_bg"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"/>
+                    <TextView
+                        android:id="@+id/t_3"
+                        android:text="单价"
+                        android:gravity="center"
+                        android:textSize="@dimen/txt"
+                        android:textColor="@color/txt"
+                        android:background="@color/txt_bg"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"/>
+                    <TextView
+                        android:id="@+id/t_4"
+                        android:text="交易时间"
+                        android:gravity="center"
+                        android:textSize="@dimen/txt"
+                        android:textColor="@color/txt"
+                        android:background="@color/txt_bg"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"/>
+                    <TextView
+                        android:id="@+id/t_5"
+                        android:text="金额"
+                        android:gravity="center"
+                        android:textSize="@dimen/txt"
+                        android:textColor="@color/txt"
+                        android:background="@color/txt_bg"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="1506px"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                    </android.support.v7.widget.RecyclerView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="1506px"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal"
+                    android:gravity="center|right"
+                    android:layout_marginTop="2dp">
+                    <TextView
+                        android:id="@+id/t_6"
+                        android:text="共购买天然气"
+                        android:gravity="center"
+                        android:textSize="@dimen/txt"
+                        android:textColor="#333333"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"/>
+                    <TextView
+                        android:id="@+id/tv_chargeNum"
+                        android:text="xxxx"
+                        android:gravity="center"
+                        android:textSize="@dimen/txt"
+                        android:textColor="#ffc000"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"/>
+                    <TextView
+                        android:id="@+id/t_7"
+                        android:text=""
+                        android:gravity="center"
+                        android:textSize="@dimen/txt"
+                        android:textColor="#333333"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"/>
+                    <TextView
+                        android:id="@+id/tv_chargeMoney"
+                        android:text="xxxx"
+                        android:gravity="center"
+                        android:textSize="@dimen/txt"
+                        android:textColor="#ffc000"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"/>
+
+                    <TextView
+                        android:id="@+id/t_8"
+                        android:text="元。"
+                        android:gravity="center"
+                        android:textSize="@dimen/txt"
+                        android:textColor="#333333"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"/>
+                </LinearLayout>
+                
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
