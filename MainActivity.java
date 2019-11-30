@@ -509,7 +509,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void getData(String id){
 //        id = "3fd5c7344f294449a27d7820b6161a3e";
-        RequestParams params = new RequestParams(BuildConfig.BASE_URL);
+        RequestParams params = new RequestParams("http://106.44.247.36:21501/data/data_receive/queryById");
 
         //MD5生成sign
         String sign = md5(id + "gasTransDetail");

@@ -5,7 +5,7 @@ android {
     defaultConfig {
         applicationId "com.waakka.myshowview"
         minSdkVersion 15
-        targetSdkVersion 28
+        targetSdkVersion 26
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -15,17 +15,50 @@ android {
             abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64', 'mips', 'mips64'
             // 还可以添加 'x86', 'x86_64', 'mips', 'mips64'
         }
-        manifestPlaceholders = [
-                JPUSH_PKGNAME : applicationId,
-                JPUSH_APPKEY : "74f736412481b19045b7b476", //JPush 上注册的包名对应的 Appkey.
-                JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
-        ]
+
     }
+
+    signingConfigs {
+        release {
+            keyAlias 'key0'
+            keyPassword 'abc123456'
+            storeFile file('C:\\Users\\admin\\Desktop\\showView.jks')
+            storePassword 'abc123456'
+
+        }
+
+
+    }
+
     buildTypes {
         release {
             minifyEnabled false
+            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            manifestPlaceholders = [
+                    APP_NAME : "@string/app_name",
+                    JPUSH_PKGNAME : "com.waakka.myshowview",
+                    JPUSH_APPKEY : "74f736412481b19045b7b476", //JPush 上注册的包名对应的 Appkey.
+                    JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
+            ]
+            buildConfigField 'String', 'BASE_URL', '"http://106.44.247.36:21501/data/data_receive/queryById"'
         }
+
+
+        debug{
+            applicationIdSuffix ".debug"
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            manifestPlaceholders = [
+                    APP_NAME : "@string/app_name_debug",
+                    JPUSH_PKGNAME : "com.waakka.myshowview.debug",
+                    JPUSH_APPKEY : "ed2ebe5670818df4165937c5", //JPush 上注册的包名对应的 Appkey.
+                    JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
+            ]
+            buildConfigField 'String', 'BASE_URL', '"http://172.20.10.3:8080/data/data_receive/queryById"'
+        }
+
+
     }
 }
 
