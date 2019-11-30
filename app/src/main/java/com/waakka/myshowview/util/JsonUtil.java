@@ -47,9 +47,14 @@ public class JsonUtil {
                     ItemBeen b = new ItemBeen();
                     JSONObject dataObj = array.getJSONObject(i);
                     b.setChargeDate(dataObj.getString("chargeDate"));
-                    double price = Double.parseDouble(dataObj.getString("price"));
-                    double chargeNum = Double.parseDouble(dataObj.getString("chargeNum"));
-                    double chargeMoney = Double.parseDouble(dataObj.getString("chargeMoney"));
+
+                    String priceStr = dataObj.getString("price");
+                    String chargeNumStr = dataObj.getString("chargeNum");
+                    String chargeMoneyStr = dataObj.getString("chargeMoney");
+
+                    double price = TextUtils.isEmpty(priceStr)? 0.0 : Double.parseDouble(priceStr);
+                    double chargeNum = TextUtils.isEmpty(chargeNumStr)? 0.0 : Double.parseDouble(chargeNumStr);
+                    double chargeMoney = TextUtils.isEmpty(chargeMoneyStr)? 0.0 : Double.parseDouble(chargeMoneyStr);
                     price /= 100;
                     chargeMoney /= 100;
                     b.setPrice(price);

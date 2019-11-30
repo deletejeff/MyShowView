@@ -508,7 +508,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void getData(String id){
-        RequestParams params = new RequestParams("http://www.tdnforce.com:8080/data/data_receive/queryById");
+//        id = "3fd5c7344f294449a27d7820b6161a3e";
+        RequestParams params = new RequestParams("http://106.44.247.36:21501/data/data_receive/queryById");
 
         //MD5生成sign
         String sign = md5(id + "gasTransDetail");
@@ -521,15 +522,25 @@ public class MainActivity extends AppCompatActivity {
 
         x.http().post(params, new Callback.CommonCallback<String>() {
             @Override
-            public void onSuccess(String result) {
+            public void onSuccess(final String result) {
                 Log.e("TAG","onSuccess==>" + result);
                 Log.e("TAG","开始解析");
+//                new Thread(){
+//                    @Override
+//                    public void run() {
+//                        JsonBeen been = JsonUtil.getBeen(result);
+//                        Message msg = new Message();
+//                        msg.obj = been;
+//                        dataHandler.sendMessage(msg);
+//                    }
+//                }.start();
                 JsonBeen been = JsonUtil.getBeen(result);
                 if (been != null){
                     Log.e("TAG","been===>" + been.toString());
                     Log.e("TAG","设置界面");
                     setData(been);
                 }
+
             }
 
             @Override
@@ -549,6 +560,18 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
+    private Handler dataHandler = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            JsonBeen been = (JsonBeen) msg.obj;
+            if (been != null){
+                Log.e("TAG","been===>" + been.toString());
+                Log.e("TAG","设置界面");
+                setData(been);
+            }
+        }
+    };
 
 
     public static String md5(String string) {

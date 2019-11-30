@@ -89,7 +89,7 @@
                     android:id="@+id/tv_payTime"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="2019年12月1日 12:00:00"
+                    android:text=""
                     android:textColor="@color/txt_bg_black"
                     android:textSize="32px" />
             </LinearLayout>
@@ -110,7 +110,7 @@
                     android:id="@+id/tv_username"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="大哪吒"
+                    android:text=""
                     android:textColor="@color/txt_bg_black"
                     android:textSize="32px" />
             </LinearLayout>
@@ -131,7 +131,7 @@
                     android:id="@+id/tv_counterNum"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="001"
+                    android:text=""
                     android:textColor="@color/txt_bg_black"
                     android:textSize="32px" />
             </LinearLayout>
@@ -202,7 +202,7 @@
                 android:id="@+id/tv_4_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="10.00元"
+                android:text="  元"
                 android:textColor="@color/txt_bg_black"
                 android:textSize="36px" />
             <TextView
@@ -216,7 +216,7 @@
                 android:id="@+id/tv_4_3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="10.00元"
+                android:text="  元"
                 android:textColor="@color/txt_bg_black"
                 android:textSize="36px" />
             <TextView
@@ -230,7 +230,7 @@
                 android:id="@+id/tv_4_4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="敖丙"
+                android:text=""
                 android:textColor="@color/txt_bg_black"
                 android:textSize="36px" />
         </LinearLayout>
@@ -262,7 +262,7 @@
                         android:id="@+id/tv_4_1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="123456789"
+                        android:text=""
                         android:textColor="@color/txt_bg_black"
                         android:textSize="30px" />
                 </LinearLayout>
@@ -280,7 +280,7 @@
                         android:layout_height="wrap_content" />
                     <TextView
                         android:id="@+id/tv_5_1"
-                        android:text="www.123321@.com"
+                        android:text=""
                         android:gravity="center"
                         android:textSize="30px"
                         android:textColor="@color/txt_bg_black"
@@ -302,7 +302,7 @@
                         android:layout_height="wrap_content" />
                     <TextView
                         android:id="@+id/tv_5_2"
-                        android:text="XX"
+                        android:text="3"
                         android:gravity="center"
                         android:textSize="30px"
                         android:textColor="@color/txt_bg_black"
