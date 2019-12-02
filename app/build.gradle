@@ -6,8 +6,8 @@ android {
         applicationId "com.waakka.myshowview"
         minSdkVersion 15
         targetSdkVersion 26
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.2"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
         ndk {
@@ -55,7 +55,7 @@ android {
                     JPUSH_APPKEY : "ed2ebe5670818df4165937c5", //JPush 上注册的包名对应的 Appkey.
                     JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
             ]
-            buildConfigField 'String', 'BASE_URL', '"http://172.20.10.3:8080/data/data_receive/queryById"'
+            buildConfigField 'String', 'BASE_URL', '"http://192.168.0.106:8080/data/data_receive/queryById"'
         }
 
 

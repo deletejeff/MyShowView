@@ -188,7 +188,7 @@ public class MainActivity extends AppCompatActivity {
             public void OnBannerClick(int position) {
                 Log.e("TAG", "llBanner clicked");
 //                showContent();
-                showInvoice();
+//                showInvoice();
             }
         });
 
@@ -294,7 +294,7 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
-    private List<String> images = new ArrayList<>();
+    private List<Integer> images = new ArrayList<>();
 
     private void initView() {
         tvName = findViewById(R.id.tv_name);
@@ -350,9 +350,8 @@ public class MainActivity extends AppCompatActivity {
 //        images.add("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1562404176349&di=a8468bf5f39c73c116176afc77157f9a&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn%2Fw800h940%2F20171212%2F3005-fypnsiq0521018.jpg");
 //        images.add("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1562404176347&di=4d081bb4131fb2163fa267871aae3bf0&imgtype=0&src=http%3A%2F%2Fi2.hdslb.com%2Fbfs%2Farchive%2Fe218d8953c1943f33acbe4000702b280b730740c.jpg");
 //        images.add("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1562404271542&di=3204dfa88b89b9eb82fe443e7fe6d184&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn10104%2F173%2Fw593h380%2F20190526%2F0e7e-hxntqyy7218092.jpg");
-        images.add("http://5b0988e595225.cdn.sohucs.com/images/20180713/6d509bb9224847c29208fbe90238ce3b.jpeg");
-        images.add("http://5b0988e595225.cdn.sohucs.com/images/20180713/6d509bb9224847c29208fbe90238ce3b.jpeg");
-        images.add("http://5b0988e595225.cdn.sohucs.com/images/20180713/6d509bb9224847c29208fbe90238ce3b.jpeg");
+//        images.add("http://5b0988e595225.cdn.sohucs.com/images/20180713/6d509bb9224847c29208fbe90238ce3b.jpeg");
+        images.add(R.mipmap.main);
         llBanner = findViewById(R.id.ll_banner);
         llContent = findViewById(R.id.ll_content);
         llInvoice = findViewById(R.id.ll_2);
@@ -366,7 +365,7 @@ public class MainActivity extends AppCompatActivity {
         llBanner.setVisibility(View.VISIBLE);
         llContent.setVisibility(View.GONE);
         llInvoice.setVisibility(View.GONE);
-        banner.setClickable(true);
+        banner.setClickable(false);
     }
     private void showContent(){
         banner.setClickable(false);
@@ -379,7 +378,7 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
                 myHandler.sendMessage(myHandler.obtainMessage());
             }
-        },60000);
+        },180000);
     }
     private void showInvoice(){
         banner.setClickable(false);
@@ -392,7 +391,7 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
                 myHandler.sendMessage(myHandler.obtainMessage());
             }
-        },60000);
+        },180000);
     }
 
 

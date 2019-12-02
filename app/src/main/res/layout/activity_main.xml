@@ -424,7 +424,8 @@
             android:orientation="vertical">
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="566px"
+                android:layout_height="420px"
+                android:layout_marginBottom="10px"
                 android:orientation="horizontal">
                 <LinearLayout
                     android:layout_width="0dp"
@@ -457,27 +458,7 @@
                         android:textColor="#333333"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
-                    <TextView
-                        android:textSize="22px"
-                        android:text="天然气安装业务咨询电话：0912-4618503"
-                        android:layout_marginTop="20px"
-                        android:textColor="#333333"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-                    <TextView
-                        android:textSize="22px"
-                        android:text="天然气缴费业务咨询电话：0912-4618031"
-                        android:layout_marginTop="16px"
-                        android:textColor="#333333"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-                    <TextView
-                        android:textSize="22px"
-                        android:text="天然气使用业务咨询电话：0912-4611389"
-                        android:layout_marginTop="16px"
-                        android:textColor="#333333"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+
                 </LinearLayout>
 
             </LinearLayout>
